@@ -1,20 +1,24 @@
-<title>Prototipo Cuentas Claras</title>
+<title>Plataforma Virgen María</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: barra superior con selector de rol; contenido en columna de 1180px; vistas de celular dentro de un marco de teléfono. Tokens del sistema de diseño del proyecto (.claude/skills/sistema-diseno). */
+/* Layout: barra superior con selector de rol; contenido en columna de 1180px; vistas de celular dentro de un marco de teléfono. Tokens del sistema de diseño del proyecto (.claude/skills/sistema-diseno), marca azul y celeste del Colegio Virgen María. */
 :root {
-  --primario: #1d4ed8;
-  --primario-hover: #1e40af;
-  --primario-suave: #dbeafe;
-  --primario-texto: #1d4ed8;
+  /* Marca Colegio Virgen María: azul institucional + celeste */
+  --primario: #1b4f9c;
+  --primario-hover: #153f7e;
+  --primario-suave: #e6f4fc;
+  --primario-texto: #1b4f9c;
   --sobre-primario: #ffffff;
+  --azul-profundo: #0f2c55;
+  --celeste: #38aee6;
+  --celeste-texto: #0a6ea8;
 
-  --fondo: #f6f8fb;
+  --fondo: #f4f8fc;
   --superficie: #ffffff;
-  --superficie-2: #eef2f8;
-  --borde: #dde4ee;
+  --superficie-2: #eaf2fa;
+  --borde: #d8e3ef;
   --texto: #0f172a;
   --texto-2: #475569;
   --texto-3: #64748b;
@@ -36,8 +40,8 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --primario: #2563eb; --primario-hover: #1d4ed8; --primario-suave: #172a52; --primario-texto: #93b4ff; --sobre-primario: #ffffff;
-    --fondo: #0b1220; --superficie: #111a2c; --superficie-2: #18233a; --borde: #26344f;
+    --primario: #2a64c4; --primario-hover: #1f55ad; --primario-suave: #12304a; --primario-texto: #8fd0f5; --sobre-primario: #ffffff; --azul-profundo: #0a1d3a; --celeste: #38aee6; --celeste-texto: #8fd0f5;
+    --fondo: #0b1626; --superficie: #111e33; --superficie-2: #172840; --borde: #233a5a;
     --texto: #e6ecf5; --texto-2: #a9b6ca; --texto-3: #8796ad;
     --exito: #4ade80; --exito-suave: #0f2e1d; --alerta: #fbbf24; --alerta-suave: #33250a;
     --peligro: #f87171; --peligro-suave: #3a1515; --info: #38bdf8; --info-suave: #0c2a3e;
@@ -47,8 +51,8 @@
   }
 }
 :root[data-theme="dark"] {
-  --primario: #2563eb; --primario-hover: #1d4ed8; --primario-suave: #172a52; --primario-texto: #93b4ff; --sobre-primario: #ffffff;
-  --fondo: #0b1220; --superficie: #111a2c; --superficie-2: #18233a; --borde: #26344f;
+  --primario: #2a64c4; --primario-hover: #1f55ad; --primario-suave: #12304a; --primario-texto: #8fd0f5; --sobre-primario: #ffffff; --azul-profundo: #0a1d3a; --celeste: #38aee6; --celeste-texto: #8fd0f5;
+  --fondo: #0b1626; --superficie: #111e33; --superficie-2: #172840; --borde: #233a5a;
   --texto: #e6ecf5; --texto-2: #a9b6ca; --texto-3: #8796ad;
   --exito: #4ade80; --exito-suave: #0f2e1d; --alerta: #fbbf24; --alerta-suave: #33250a;
   --peligro: #f87171; --peligro-suave: #3a1515; --info: #38bdf8; --info-suave: #0c2a3e;
@@ -70,14 +74,14 @@ p { margin: 0; }
 button, input, select, textarea { font: inherit; color: inherit; }
 
 /* Barra superior */
-.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--superficie); border-bottom: 1px solid var(--borde); }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--superficie); border-bottom: 1px solid var(--borde); box-shadow: inset 0 3px 0 var(--celeste); }
 .topbar-in { max-width: 1180px; margin: 0 auto; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
 .marca { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .marca strong { font-size: 1rem; display: block; }
 .marca small { color: var(--texto-3); font-size: 0.75rem; display: block; }
-.logo { width: 34px; height: 34px; border-radius: 9px; background: var(--primario); display: grid; place-items: center; flex: none; }
+.logo { width: 34px; height: 34px; border-radius: 9px; background: var(--primario); border-bottom: 3px solid var(--celeste); display: grid; place-items: center; flex: none; }
 .pill-demo { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--alerta); background: var(--alerta-suave); padding: 2px 8px; border-radius: 99px; }
-.roles { display: flex; gap: 2px; background: var(--superficie-2); border: 1px solid var(--borde); border-radius: 10px; padding: 3px; overflow-x: auto; max-width: 100%; margin-left: auto; }
+.roles { display: flex; gap: 2px; background: var(--superficie-2); border: 1px solid var(--borde); border-radius: 10px; padding: 3px; overflow-x: auto; max-width: 100%; margin-left: auto; flex: 0 1 auto; min-width: 0; }
 .roles button { border: 0; background: transparent; padding: 7px 12px; border-radius: 7px; cursor: pointer; white-space: nowrap; font-size: 0.875rem; font-weight: 500; color: var(--texto-2); min-height: 36px; }
 .roles button[aria-pressed="true"] { background: var(--superficie); color: var(--texto); box-shadow: var(--sombra); font-weight: 600; }
 .acciones-top { display: flex; gap: 8px; }
@@ -158,7 +162,7 @@ textarea.input { min-height: 80px; resize: vertical; }
 .semanas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 @media (max-width: 900px) { .semanas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .semanas { grid-template-columns: 1fr; } }
-.semana { border-top: 3px solid var(--primario); }
+.semana { border-top: 3px solid var(--celeste); }
 .semana ul { margin: 0; padding-left: 18px; font-size: 0.875rem; color: var(--texto-2); display: grid; gap: 4px; }
 .roles-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
 @media (max-width: 1000px) { .roles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -198,7 +202,7 @@ textarea.input { min-height: 80px; resize: vertical; }
 .telefono { border: 10px solid var(--marco); border-radius: 40px; overflow: hidden; background: var(--fondo); width: 100%; max-width: 390px; box-shadow: var(--sombra-alta); }
 .pantalla { height: 720px; overflow-y: auto; display: flex; flex-direction: column; }
 .notch { height: 26px; background: var(--superficie); display: flex; justify-content: space-between; align-items: center; padding: 0 18px; font-size: 0.75rem; font-weight: 600; flex: none; }
-.app-cab { background: var(--primario); color: var(--sobre-primario); padding: 14px 16px; flex: none; }
+.app-cab { background: var(--azul-profundo); color: #ffffff; padding: 14px 16px; flex: none; border-bottom: 4px solid var(--celeste); }
 .app-cab small { opacity: 0.85; display: block; font-size: 0.8125rem; }
 .app-cuerpo { padding: 14px; display: grid; gap: 12px; align-content: start; flex: 1; }
 .app-tabs { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--superficie); border-bottom: 1px solid var(--borde); flex: none; }
@@ -297,17 +301,15 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
 <header class="topbar">
   <div class="topbar-in">
     <div class="marca">
-      <span class="logo" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m15 17 2 2 4-4"/></svg>
-      </span>
+      <span class="logo" aria-hidden="true"><span style="color:#fff;font-weight:700;font-size:.8125rem;letter-spacing:.02em">VM</span></span>
       <div>
-        <strong>Cuentas Claras</strong>
-        <small>I.E.P. Los Álamos · <span class="pill-demo">Prototipo · datos de ejemplo</span></small>
+        <strong>Colegio Virgen María</strong>
+        <small>Plataforma Cuentas Claras · <span class="pill-demo">Prototipo · datos de ejemplo</span></small>
       </div>
     </div>
     <nav class="roles" id="roles" aria-label="Cambiar de vista"></nav>
     <div class="acciones-top">
-      <button class="btn btn-secundario btn-chico" data-a="guia">Guía de demo</button>
+      <button class="btn btn-secundario btn-chico" data-a="guia">Guía</button>
     </div>
   </div>
 </header>
@@ -393,7 +395,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
       cierre: null, asistencia: null, boleta: 1237, nid: 1, visto: {}
     };
     s.auditoria.push({ hora: "01/10 18:05", usuario: CAJERA.nombre, rol: CAJERA.rol, accion: "Cierre de caja", detalle: "Esperado S/ 1,350.00 · Contado S/ 1,350.00 · Sin diferencia" });
-    s.mensajes.push({ fam: "f1", hora: "28/08 16:20", texto: "Colegio Los Álamos: recibimos S/ 900.00 por Pensión Agosto de Mateo y Valeria. Boleta B001-001105. Gracias por su puntualidad." });
+    s.mensajes.push({ fam: "f1", hora: "28/08 16:20", texto: "Colegio Virgen María: recibimos S/ 900.00 por Pensión Agosto de Mateo y Valeria. Boleta B001-001105. Gracias por su puntualidad." });
     aplicarPago(s, { cuotaIds: ["a3-6"], medio: "EFECTIVO", usuario: CAJERA.nombre, rol: CAJERA.rol, hora: "08:12" });
     aplicarPago(s, { cuotaIds: ["a5-6"], medio: "YAPE", usuario: CAJERA.nombre, rol: CAJERA.rol, hora: "08:40" });
     aplicarPago(s, { cuotaIds: ["a7-7"], medio: "EFECTIVO", usuario: CAJERA.nombre, rol: CAJERA.rol, hora: "09:05" });
@@ -456,7 +458,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
     cs.forEach(function (c, i) { c.pagado += montos[i]; });
     st.pagos.push(p);
     var detalle = cs.map(function (c) { return c.concepto + " de " + st.alumnos.find(function (a) { return a.id === c.alumnoId; }).corto; }).join(", ");
-    st.mensajes.push({ fam: al.fam, hora: h, pagoId: p.id, texto: "Colegio Los Álamos: recibimos " + fmt(total) + " por " + detalle + ". Medio: " + MEDIOS[o.medio] + ". Boleta electrónica " + p.boleta + ". Si usted no realizó este pago, llame a Dirección." });
+    st.mensajes.push({ fam: al.fam, hora: h, pagoId: p.id, texto: "Colegio Virgen María: recibimos " + fmt(total) + " por " + detalle + ". Medio: " + MEDIOS[o.medio] + ". Boleta electrónica " + p.boleta + ". Si usted no realizó este pago, llame a Dirección." });
     audit(st, o.usuario, o.rol, "Pago registrado", p.boleta + " · " + fmt(total) + " · " + MEDIOS[o.medio] + " · " + detalle + " · boleta enviada a SUNAT y WhatsApp a la familia", h);
     return p;
   }
@@ -477,7 +479,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
       if (aprobar) {
         p.estado = "ANULADO";
         p.cuotaIds.forEach(function (id, i) { cuota(id).pagado -= p.montos[i]; });
-        s.mensajes.push({ fam: p.fam, hora: hora(), texto: "Colegio Los Álamos: se anuló el pago " + p.boleta + " por " + fmt(p.total) + ". Motivo: " + x.motivo + ". Se emitió la nota de crédito. Si no reconoce esta anulación, comuníquese con Dirección." });
+        s.mensajes.push({ fam: p.fam, hora: hora(), texto: "Colegio Virgen María: se anuló el pago " + p.boleta + " por " + fmt(p.total) + ". Motivo: " + x.motivo + ". Se emitió la nota de crédito. Si no reconoce esta anulación, comuníquese con Dirección." });
       } else {
         p.estado = "VIGENTE";
       }
@@ -486,7 +488,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
       if (aprobar) {
         cuotasDe(x.alumnoId).forEach(function (c, i) { if (i >= 8 && saldo(c) > 0) c.descuento = Math.round(c.monto * 0.1); });
         var al = alumno(x.alumnoId);
-        s.mensajes.push({ fam: al.fam, hora: hora(), texto: "Colegio Los Álamos: se aprobó el descuento por hermano de 10 % para " + al.corto + " en las pensiones de octubre a diciembre. Su nueva pensión es " + fmt(PENSION[al.nivel] * 0.9) + "." });
+        s.mensajes.push({ fam: al.fam, hora: hora(), texto: "Colegio Virgen María: se aprobó el descuento por hermano de 10 % para " + al.corto + " en las pensiones de octubre a diciembre. Su nueva pensión es " + fmt(PENSION[al.nivel] * 0.9) + "." });
       }
       audit(s, DIRECTOR.nombre, DIRECTOR.rol, aprobar ? "Descuento aprobado" : "Descuento rechazado", x.detalle + " · " + alumno(x.alumnoId).nombre + (comentario ? " · comentario: " + comentario : ""));
     }
@@ -702,7 +704,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
       var tot = ui.padreSel.reduce(function (t, id) { return t + saldo(cuota(id)); }, 0);
       cuerpo += '<div class="barra-pago"><button class="btn btn-primario btn-bloque" data-a="padrePagar"' + (tot ? "" : " disabled") + ">" + (tot ? "Pagar " + fmt(tot) : "Selecciona qué pagar") + "</button></div>";
     } else if (ui.tabPadre === "mensajes") {
-      cuerpo = '<div class="wa-cab"><strong>Colegio Los Álamos</strong><small style="display:block;opacity:.85">Cuenta oficial verificada</small></div><div class="wa">' +
+      cuerpo = '<div class="wa-cab"><strong>Colegio Virgen María</strong><small style="display:block;opacity:.85">Cuenta oficial verificada</small></div><div class="wa">' +
         (msgs.length ? msgs.slice().reverse().map(function (m, i) {
           return '<div class="burbuja' + (ui.nuevosMensajes[f.id] && i < ui.nuevosMensajes[f.id] ? " nueva" : "") + '">' + esc(m.texto) + "<time>" + m.hora + "</time></div>";
         }).join("") : '<p class="muted">Aún no hay mensajes.</p>') + "</div>";
@@ -714,7 +716,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
           (p.estado === "ANULADO" ? '<span class="badge b-bad">Anulada · nota de crédito emitida</span>' : '<span class="badge b-ok">Boleta electrónica válida</span>') + "</div>";
       }).join("") : '<p class="muted">Los pagos de este año aparecerán aquí con su boleta.</p>') + "</div>";
     }
-    var app = '<div class="app-cab"><small>Colegio Los Álamos</small><strong>Hola, ' + esc(f.corto) + "</strong></div>" +
+    var app = '<div class="app-cab"><small>Colegio Virgen María</small><strong>Hola, ' + esc(f.corto) + "</strong></div>" +
       '<div class="app-tabs" role="tablist">' + tabs.map(function (t) { return '<button role="tab" aria-selected="' + (ui.tabPadre === t[0]) + '" data-a="tabPadre" data-v="' + t[0] + '">' + t[1] + "</button>"; }).join("") + "</div>" + cuerpo;
     var opciones = s.familias.map(function (x) { return '<option value="' + x.id + '"' + (x.id === f.id ? " selected" : "") + ">" + esc(x.apoderado) + "</option>"; }).join("");
     var nota = '<div><h1>Lo que ve la familia</h1><p class="muted">El celular de la apoderada o apoderado. Así se entera al instante de cada pago.</p></div>' +
@@ -899,7 +901,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
       } else {
         c = '<h2 id="m-t">Pagar ' + fmt(totp) + '</h2><div class="medios">' + ["YAPE", "PLIN", "TARJETA"].map(function (k) { return '<label><input type="radio" name="mpadre" value="' + k + '" data-a="medioPadre"' + (m.medio === k ? " checked" : "") + "> " + MEDIOS[k] + "</label>"; }).join("") + "</div>" +
           (m.medio === "TARJETA" ? '<p class="muted">Se abrirá la pasarela segura del banco (Niubiz, Izipay o Culqi) para ingresar la tarjeta.</p>'
-                                 : qrSvg(m.medio + totp) + '<p class="muted" style="text-align:center">Escanea con ' + MEDIOS[m.medio] + "<br><strong>Colegio Los Álamos S.A.C.</strong> · cuenta empresarial</p>") +
+                                 : qrSvg(m.medio + totp) + '<p class="muted" style="text-align:center">Escanea con ' + MEDIOS[m.medio] + "<br><strong>I.E.P. Virgen María</strong> · cuenta empresarial</p>") +
           '<div class="acciones"><button class="btn btn-secundario" data-a="cerrarModal">Cancelar</button><button class="btn btn-primario" data-a="simularPago">Simular pago confirmado</button></div>';
       }
     }
@@ -1004,7 +1006,7 @@ details summary { cursor: pointer; color: var(--primario-texto); font-size: 0.81
         SECCION.forEach(function (n, i) { var r = document.querySelector('input[name="as-' + i + '"]:checked'); marcas[i] = r ? r.value : "P"; if (marcas[i] !== "P") avisos++; });
         s.asistencia = { hora: hora(), marcas: marcas, avisos: avisos };
         if (marcas[0] !== "P") {
-          s.mensajes.push({ fam: "f1", hora: hora(), texto: "Colegio Los Álamos: Mateo " + (marcas[0] === "F" ? "no asistió hoy" : "llegó tarde hoy") + " (02/10). Si tiene una justificación, puede responder a este mensaje. Prof. Ana Torres." });
+          s.mensajes.push({ fam: "f1", hora: hora(), texto: "Colegio Virgen María: Mateo " + (marcas[0] === "F" ? "no asistió hoy" : "llegó tarde hoy") + " (02/10). Si tiene una justificación, puede responder a este mensaje. Prof. Ana Torres." });
           ui.nuevosMensajes.f1 = (ui.nuevosMensajes.f1 || 0) + 1;
         }
         audit(s, "Ana Torres", "Docente", "Asistencia registrada", "5.° Primaria A · " + avisos + " avisos enviados");

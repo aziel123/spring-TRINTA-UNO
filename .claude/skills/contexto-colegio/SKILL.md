@@ -5,6 +5,9 @@ description: Conocimiento del dominio del sistema de gestión escolar para coleg
 
 # Contexto del dominio: gestión escolar
 
+## Cliente
+**Colegio Virgen María** (I.E.P. privada, Perú). La plataforma se llama **Cuentas Claras** y lleva la marca del colegio (azul y celeste).
+
 ## El problema que resolvemos
 Un colegio privado peruano sin herramientas informáticas perdió **más de S/ 70,000**. Una auxiliar era la única encargada de cobrar pensiones: recibía el efectivo, lo registraba (o no) y lo custodiaba sin que nadie más lo viera. El sistema debe hacer que eso **no pueda volver a pasar sin detectarse el mismo día**.
 

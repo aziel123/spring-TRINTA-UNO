@@ -1,6 +1,6 @@
 # Sistema de gestión escolar
 
-Plataforma para modernizar un colegio privado del Perú. El primer módulo es **cobranza con controles antifraude**: el colegio perdió más de S/ 70,000 por falta de control en los cobros. Después vienen el módulo académico (notas, asistencia, SIAGIE) y el de comunicación con los padres.
+Plataforma **Cuentas Claras** para modernizar el **Colegio Virgen María** (colegio privado del Perú). Marca: azul `#1b4f9c` y celeste `#38aee6` (ver skill `sistema-diseno`). Plan de trabajo: `docs/plan-de-desarrollo.md`. El primer módulo es **cobranza con controles antifraude**: el colegio perdió más de S/ 70,000 por falta de control en los cobros. Después vienen el módulo académico (notas, asistencia, SIAGIE) y el de comunicación con los padres.
 
 ## Stack
 Spring Boot 2.6 · Java 11 · Spring Data JPA · Thymeleaf · MySQL · Maven (`./mvnw`).
